@@ -2,6 +2,7 @@
   "BACKLOG": "Backlog",
   "TASKS": "Tarefas",
   "TODO": {
-    "ADD": "Adicionar nova tarefa"
+    "ADD": "Adicionar nova tarefa",
+    "EMPTY_STATE": "Sem tarefas criadas"
   }
 }
