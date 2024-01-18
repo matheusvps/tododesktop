@@ -5,7 +5,7 @@ const RoutesNames = {
    },
    TODO: {
       NAME: 'Todo',
-      PATH: '/todo'
+      PATH: '/'
    }
 };
 

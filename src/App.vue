@@ -1,15 +1,55 @@
 <template>
   <div class="app">
-    <router-view/>
+    <q-img src="./assets/todo.png" class="logo" />
+    <div class="links q-mb-lg">
+      <q-btn
+        :label="$t('TASKS')"
+        icon="list"
+        no-caps
+        dense
+        color="primary"
+        class="q-mr-sm"
+        @click="goToToDoList"
+      />
+      <q-btn
+        :label="$t('BACKLOG')"
+        icon="history"
+        color="primary"
+        no-caps
+        dense
+        @click="goToBacklog"
+      />
+    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
+import { RoutesNames } from './router/RoutesNames';
+import { useRouter } from 'vue-router';
 
 export default {
   name: 'App',
-  components: {
-  }
+  setup() {
+    const router = useRouter();
+
+    const goToBacklog = () => {
+      if (router) {
+        router.push(RoutesNames.BACKLOG.PATH);
+      }
+    };
+
+    const goToToDoList = () => {
+      if (router) {
+        router.push(RoutesNames.TODO.PATH);
+      }
+    };
+
+    return {
+      goToBacklog,
+      goToToDoList,
+    };
+  },
 }
 </script>
 

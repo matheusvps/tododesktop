@@ -3,6 +3,8 @@
   "TASKS": "Tarefas",
   "TODO": {
     "ADD": "Adicionar nova tarefa",
-    "EMPTY_STATE": "Sem tarefas criadas"
+    "EMPTY_STATE": "Sem tarefas criadas",
+    "GENERATE_BACKLOG": "Começar meu dia",
+    "END_BACKLOG": "Finalizar meu dia"
   }
 }
