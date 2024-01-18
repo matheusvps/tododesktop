@@ -1,5 +1,10 @@
 { 
-  "AppTitle": "Aplicativo de Tarefas do Baiano",
-  "About": "Sobre",
-  "Tasks": "Tarefas"
+  "BACKLOG": "Backlog",
+  "TASKS": "Tarefas",
+  "TODO": {
+    "ADD": "Adicionar nova tarefa",
+    "EMPTY_STATE": "Sem tarefas criadas",
+    "GENERATE_BACKLOG": "Começar meu dia",
+    "END_BACKLOG": "Finalizar meu dia"
+  }
 }

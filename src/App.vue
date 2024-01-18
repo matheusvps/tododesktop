@@ -1,35 +1,67 @@
 <template>
-  <img 
-    alt="Vue logo" 
-    src="./assets/todo.png"
-    height="200px"
-  >
-
-  <div class="hello">
-    <h1> {{ $t('AppTitle') }}</h1>
+  <div class="app">
+    <q-img src="./assets/todo.png" class="logo" />
+    <div class="links q-mb-lg">
+      <q-btn
+        :label="$t('TASKS')"
+        icon="list"
+        no-caps
+        dense
+        color="primary"
+        class="q-mr-sm"
+        @click="goToToDoList"
+      />
+      <q-btn
+        :label="$t('BACKLOG')"
+        icon="history"
+        color="primary"
+        no-caps
+        dense
+        @click="goToBacklog"
+      />
+    </div>
+    <router-view />
   </div>
-
-  <MainPage />
 </template>
 
 <script>
-import MainPage from './components/MainPage.vue'
+import { RoutesNames } from './router/RoutesNames';
+import { useRouter } from 'vue-router';
 
 export default {
   name: 'App',
-  components: {
-    MainPage
-  }
+  setup() {
+    const router = useRouter();
+
+    const goToBacklog = () => {
+      if (router) {
+        router.push(RoutesNames.BACKLOG.PATH);
+      }
+    };
+
+    const goToToDoList = () => {
+      if (router) {
+        router.push(RoutesNames.TODO.PATH);
+      }
+    };
+
+    return {
+      goToBacklog,
+      goToToDoList,
+    };
+  },
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scoped>
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  height: 140px;
+  max-width: 300px;
 }
 </style>
