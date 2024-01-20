@@ -12,7 +12,7 @@
         @click="goToToDoList"
       />
       <q-btn
-        :label="$t('BACKLOG')"
+        :label="$t('BACKLOG.TITLE')"
         icon="history"
         color="primary"
         no-caps

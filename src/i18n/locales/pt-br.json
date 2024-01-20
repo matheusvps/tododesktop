@@ -1,10 +1,16 @@
 { 
-  "BACKLOG": "Backlog",
   "TASKS": "Tarefas",
   "TODO": {
     "ADD": "Adicionar nova tarefa",
     "EMPTY_STATE": "Sem tarefas criadas",
     "GENERATE_BACKLOG": "Começar meu dia",
     "END_BACKLOG": "Finalizar meu dia"
+  },
+  "BACKLOG":{
+    "TITLE": "Backlog",
+    "COMPLETED_TASKS": "Tarefas completas",
+    "NOT_FINISHED_TASKS": "Tarefas incompletas" ,
+    "EMPTY_FINISHED": "Você não completou tarefas nesse dia :(",
+    "FULL_EMPTY": "Você não tem registros para esse dia !"
   }
 }
