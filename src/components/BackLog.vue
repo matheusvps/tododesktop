@@ -1,21 +1,33 @@
 <template>
-  <div class="hello">
-    <input
-      ref="fileInput"
-      type="file"
-      @change="handleFileSelection"
-      directory
-      webkitdirectory
-      style="display: none"
-    />
+  <div class="full-width column">
 
-    <q-btn
-      filled
-      outlined
-      dense
-      label="Selecione uma pasta"
-      @click="$refs.fileInput.click()"
-    />
+    <about-app/>
+
+    <q-separator/>
+
+    <div class="q-mt-md text-center">
+      <input
+        ref="fileInput"
+        type="file"
+        @change="handleFileSelection"
+        directory
+        multiple
+        webkitdirectory
+        style="display: none"
+      />
+
+      <q-btn
+        filled
+        outlined
+        no-caps
+        dense
+        color="secondary"
+        class="directory-button text-center"
+        :label="$t('BACKLOG.PICK_DIRECTORY')"
+        @click="$refs.fileInput.click()"
+      />
+    </div>
+    
     <q-spinner v-if="loading" />
 
     <div v-if="backlogData.length">
@@ -46,9 +58,13 @@
 
 <script>
 import BacklogService from '@/services/BacklogService';
+import AboutApp from '@/components/AboutApp.vue';
 
 export default {
   name: 'BackLog',
+  components: {
+    AboutApp,
+  },
   data() {
     return {
       loading: false,
@@ -86,3 +102,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.directory-button {
+  max-width: 200px;
+}
+</style>

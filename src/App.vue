@@ -1,6 +1,7 @@
 <template>
   <div class="app">
     <q-img src="./assets/todo.png" class="logo" />
+
     <div class="links q-mb-lg">
       <q-btn
         :label="$t('TASKS')"
@@ -63,5 +64,9 @@ export default {
 .logo {
   height: 140px;
   max-width: 300px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 </style>

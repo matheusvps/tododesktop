@@ -1,6 +1,8 @@
 <template>
   <div class="full-width column">
 
+    <about-app/>
+
     <q-separator />
 
     <div class="q-mt-md text-center">
@@ -67,7 +69,13 @@ import TaskService from '@/services/TaskService';
 import BacklogService from '@/services/BacklogService';
 import { ref } from 'vue';
 
+import AboutApp from '@/components/AboutApp.vue';
+
 export default {
+  name: 'ToDo',
+  components: {
+    AboutApp,
+  },
   setup() {
     const { tasks, completedTasks, addTask, deleteTask, editTask, toggleTaskCompletion } = TaskService;
     const currentTask = ref('');
