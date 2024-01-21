@@ -1,10 +1,21 @@
 { 
-  "BACKLOG": "Backlog",
   "TASKS": "Tarefas",
   "TODO": {
     "ADD": "Adicionar nova tarefa",
     "EMPTY_STATE": "Sem tarefas criadas",
     "GENERATE_BACKLOG": "Começar meu dia",
     "END_BACKLOG": "Finalizar meu dia"
+  },
+  "BACKLOG":{
+    "TITLE": "Backlog",
+    "PICK_DIRECTORY": "Selecione uma pasta",
+    "COMPLETED_TASKS": "Tarefas completas",
+    "NOT_FINISHED_TASKS": "Tarefas incompletas" ,
+    "EMPTY_FINISHED": "Você não completou tarefas nesse dia :(",
+    "FULL_EMPTY": "Você não tem registros para esse dia !"
+  },
+  "ABOUT":{
+    "TITLE": "Sobre o aplicativo",
+    "DESCRIPTION": "O aplicativo ToDo foi criado com o intuito de ser uma aplicação simples. O ideal é que você crie uma pasta para armazenar os arquivos dos dias que foram concluídos. Centralize todos os arquivos gerados ao clicar em <strong> 'Finalizar meu dia' </strong> em uma única pasta e, ao entrar no site, caso queira ver o que foi concluído. Vá pra a aba Backlog e clique em <strong> 'Importar backlog'. </strong> Não se preocupe com arquivos gerados no mesmo dia, nós daremos conta de unir as tarefas e apresentá-las corretamente para você. Basta escolher a pasta com os TXTs dos dias anteriores."
   }
 }

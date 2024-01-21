@@ -1,23 +1,17 @@
 <template>
   <div class="full-width column">
 
+    <about-app/>
+
     <q-separator />
 
     <div class="q-mt-md text-center">
-      <q-btn
-        :label="$t('TODO.GENERATE_BACKLOG')"
-        no-caps
-        dense
-        color="secondary"
-        class="q-mr-sm"
-        @click="goToToDoList"
-      />
       <q-btn
         :label="$t('TODO.END_BACKLOG')"
         color="secondary"
         no-caps
         dense
-        @click="goToBacklog"
+        @click="saveBacklog"
       />
     </div>
 
@@ -72,9 +66,16 @@
 
 <script>
 import TaskService from '@/services/TaskService';
+import BacklogService from '@/services/BacklogService';
 import { ref } from 'vue';
 
+import AboutApp from '@/components/AboutApp.vue';
+
 export default {
+  name: 'ToDo',
+  components: {
+    AboutApp,
+  },
   setup() {
     const { tasks, completedTasks, addTask, deleteTask, editTask, toggleTaskCompletion } = TaskService;
     const currentTask = ref('');
@@ -85,7 +86,12 @@ export default {
       currentTask.value = '';
     };
 
+    const saveBacklog = () => {
+      BacklogService.saveBacklog(tasks.value, completedTasks.value);
 
+      tasks.value = [];
+      completedTasks.value = [];
+    };
 
     return {
       currentTask,
@@ -96,6 +102,7 @@ export default {
       deleteTask,
       editTask,
       toggleTaskCompletion,
+      saveBacklog,
     };
   },
 };
